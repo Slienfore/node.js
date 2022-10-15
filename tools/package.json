@@ -1,0 +1,13 @@
+{
+  "name": "Slienfore-tools",
+  "version": "1.0.0",
+  "description": "提供格式化时间, HTMLEscape功能",
+  "main": "index.js",
+  "keywords": [
+    "DateFormat",
+    "Htmlescape",
+    "Slienfore"
+  ],
+  "author": "Slienfore",
+  "license": "ISC"
+}

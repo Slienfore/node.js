@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<button id="get">GET</button>
+<button id="post">POST</button>
+<button id="delete">DELETE</button>
+<button id="jsonp">JSONP</button>
+<script>
+    $(() => {
+        $('#get').on('click', function () {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:8080/api/get',
+                data: {name: 'alias', password: 3306},
+                success(res) {
+                    console.log(res)
+                }
+            })
+        })
+
+        $('#post').on('click', function () {
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8080/api/post',
+                data: {name: 'alias', password: 3306},
+                success(res) {
+                    console.log(res)
+                }
+            })
+        })
+
+        // 预检请求
+        $('#delete').on('click', function () {
+            $.ajax({
+                type: 'DELETE',
+                url: 'http://localhost:8080/api/delete',
+                success(res) {
+                    console.log(res)
+                }
+            })
+        })
+
+        // jsonp 解决跨域问题
+        $('#jsonp').on('click', function () {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:8080/api/jsonp',
+                // 标记为 jsonp 方式获取数据
+                dataType: 'jsonp',
+                success(res) {
+                    console.log(res)
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>
